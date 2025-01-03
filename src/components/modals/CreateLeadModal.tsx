@@ -52,7 +52,7 @@ const CreateLeadModal: React.FC<CreateModalProps> = ({ isOpen, onClose, onSave, 
       <div className="w-full sm:w-1/3 bg-white p-6 relative">
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 rounded-full bg-graydark  p-1 h-10 w-10 text-whiter "
+          className="absolute top-3 right-3 rounded-full bg-lightblue  p-1 h-10 w-10 text-whiter "
         >
           &times;
         </button>

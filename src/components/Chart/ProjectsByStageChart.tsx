@@ -22,7 +22,7 @@ const ProjectsByStageChart: React.FC = () => {
         stroke: {
             curve: "smooth",
             width: 3,
-            colors: ["#E43C13"],
+            colors: ["#0479D0"],
         },
         fill: {
             type: "gradient",
@@ -35,12 +35,12 @@ const ProjectsByStageChart: React.FC = () => {
                 colorStops: [
                     {
                         offset: 0,
-                        color: "#E43C13",
+                        color: "#0479D0",
                         opacity: 0.7,
                     },
                     {
                         offset: 100,
-                        color: "#E43C13",
+                        color: "#0479D0",
                         opacity: 0.2,
                     },
                 ],
@@ -50,15 +50,15 @@ const ProjectsByStageChart: React.FC = () => {
             categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
             labels: {
                 style: {
-                    colors: "#E43C13",
+                    colors: "#0479D0",
                     fontSize: "14px",
                 },
             },
             axisBorder: {
-                color: "#E43C13",
+                color: "#0479D0",
             },
             axisTicks: {
-                color: "#E43C13",
+                color: "#0479D0",
             },
         },
         yaxis: {
@@ -67,15 +67,15 @@ const ProjectsByStageChart: React.FC = () => {
             tickAmount: 5,
             labels: {
                 style: {
-                    colors: "#E43C13",
+                    colors: "#0479D0",
                     fontSize: "14px",
                 },
             },
             axisBorder: {
-                color: "#E43C13",
+                color: "#0479D0",
             },
             axisTicks: {
-                color: "#E43C13",
+                color: "#0479D0",
             },
         },
         grid: {
@@ -94,9 +94,9 @@ const ProjectsByStageChart: React.FC = () => {
                 show: true,
             },
             custom: function ({ series, seriesIndex, dataPointIndex, w }) {
-                return `<div style="background-color: #F8F7E5; padding: 10px; border-radius: 5px; border: 1px solid #E43C13;">
-                                <span style="color: #E43C13; font-weight: bold;">${w.globals.seriesNames[seriesIndex]}:</span> 
-                                <span style="color: #E43C13;">${series[seriesIndex][dataPointIndex]}</span>
+                return `<div style="background-color: #fff; padding: 10px; border-radius: 5px; border: 1px solid #0479D0;">
+                                <span style="color: #0479D0; font-weight: bold;">${w.globals.seriesNames[seriesIndex]}:</span> 
+                                <span style="color: #0479D0;">${series[seriesIndex][dataPointIndex]}</span>
                             </div>`;
             },
         },
@@ -104,12 +104,12 @@ const ProjectsByStageChart: React.FC = () => {
             yaxis: [
                 {
                     y: 50,
-                    borderColor: "#E43C13",
+                    borderColor: "#0479D0",
                     label: {
-                        borderColor: "#E43C13",
+                        borderColor: "#0479D0",
                         style: {
                             color: "#fff",
-                            background: "#E43C13",
+                            background: "#0479D0",
                         },
                         text: "High Threshold",
                     },
@@ -118,12 +118,12 @@ const ProjectsByStageChart: React.FC = () => {
             xaxis: [
                 {
                     x: "Jun",
-                    borderColor: "#E43C13",
+                    borderColor: "#0479D0",
                     label: {
-                        borderColor: "#E43C13",
+                        borderColor: "#0479D0",
                         style: {
 
-                            background: "#E43C13",
+                            background: "#0479D0",
                         },
                         text: "Mid-Year",
                     },
@@ -134,9 +134,9 @@ const ProjectsByStageChart: React.FC = () => {
 
     const chartSeries = [
         {
-            name: "Projects",
-            backgroundColor: "#F8F7E5",
-            color: "#E43C13",
+            name: "Leads",
+            backgroundColor: "#fff",
+            color: "#0479D0",
             data: [40, 30, 20, 25, 15, 20, 30, 25, 40, 35, 20, 15],
         },
     ];
@@ -144,7 +144,7 @@ const ProjectsByStageChart: React.FC = () => {
     return (
         <div className="p-4 mt-10 bg-white rounded-lg shadow-md">
             <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-medium text-gray-800">Projects By Stage</h3>
+                <h3 className="text-lg font-medium text-gray-800">Leads by date </h3>
                 <div className="flex items-center space-x-2">
                     <select
                         className="border border-gray-300 rounded px-2 py-1 text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-300"

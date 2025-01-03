@@ -19,7 +19,7 @@ const navItems = [
         icon: FaTachometerAlt,
         path: '/',
         subItems: [
-          { label: 'Leads', path: '/' },
+          { label: 'Analyst', path: '/' },
         ],
       },
       { label: 'Calendar', icon: FaCalendarAlt, path: '/calendar' },
@@ -80,7 +80,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   return (
     <aside
       ref={sidebar}
-      className={`absolute  left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-[#F8F7E5] duration-300 ease-linear lg:static lg:translate-x-0 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
+      className={`absolute  left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-[#fff] duration-300 ease-linear lg:static lg:translate-x-0 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
     >
       <div className="flex items-center justify-between gap-2 px-6 pt-5.5 lg:pt-6.5">
         <NavLink to="/">
@@ -109,7 +109,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
         </button>
       </div>
       <div className="no-scrollbar  flex flex-col overflow-y-auto duration-300 ease-linear">
-        <nav className="mt-3 py-4 lg:mt-2 border-t-2 border-graydark">
+        <nav className="mt-3 py-4 lg:mt-2 border-t-2 border-lightblue">
           {navItems.map((section, index) => (
             <div key={index}>
               <ul className="mb-6 flex flex-col gap-1.5">
@@ -127,7 +127,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           >
                             <NavLink
                               to="#"
-                              className={`group relative flex items-center gap-2.5 text-xl px-4 py-2 font-medium bg-graydark text-whiter duration-300 ease-in-out hover:bg-graydark hover:text-whiter ${(pathname === item.path || pathname.includes(item.path)) && 'bg-graydark text-whiter'}`}
+                              className={`group relative flex items-center gap-2.5 text-xl px-4 py-2 font-medium bg-lightblue text-whiter duration-300 ease-in-out hover:bg-lightblue hover:text-whiter ${(pathname === item.path || pathname.includes(item.path)) && 'bg-lightblue text-whiter'}`}
                               onClick={(e) => {
                                 e.preventDefault();
                                 sidebarExpanded ? handleClick() : setSidebarExpanded(true);
@@ -145,8 +145,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                                   <NavLink
                                     to={subItem.path}
                                     className={({ isActive }) =>
-                                      'group relative flex items-center text-xl gap-2.5 py-2 px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-whiter hover:bg-bodydark1 ' +
-                                      (isActive && '!bg-bodydark1 text-whiter')
+                                      'group relative flex items-center text-xl gap-2.5 py-2 px-4 font-medium text-lightblue duration-300 ease-in-out hover:text-whiter hover:bg-lightblue ' +
+                                      (isActive && '!bg-lightblue text-whiter')
                                     }
                                   >
                                     {subItem.label}
@@ -166,7 +166,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     >
                       <NavLink
                         to={item.path}
-                        className={`group relative flex text-xl my-3 items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark hover:text-whiter ${pathname.includes(item.path) && 'text-whiter bg-graydark'}`}
+                        className={`group relative flex text-xl my-3 items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-lightblue duration-300 ease-in-out hover:bg-lightblue hover:text-whiter ${pathname.includes(item.path) && 'text-whiter bg-lightblue'}`}
                       >
                         <item.icon className="text-xl" />
                         {item.label}

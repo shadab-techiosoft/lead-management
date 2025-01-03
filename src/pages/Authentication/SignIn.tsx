@@ -16,7 +16,7 @@ const SignIn: React.FC = () => {
                 <img className="h-12" src={Logo} alt="Logo" />
               </Link>
 
-              <p className="2xl:px-20 text-graydark">
+              <p className="2xl:px-20 text-lightblue">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
                 suspendisse.
               </p>
@@ -41,7 +41,7 @@ const SignIn: React.FC = () => {
                     <input
                       type="email"
                       placeholder="Enter your email"
-                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-graydark focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-graydark"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-lightblue focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-lightblue"
                     />
 
                     <span className="absolute right-4 top-4">
@@ -72,7 +72,7 @@ const SignIn: React.FC = () => {
                     <input
                       type="password"
                       placeholder="6+ Characters, 1 Capital letter"
-                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-graydark focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-graydark"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-lightblue focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-lightblue"
                     />
 
                     <span className="absolute right-4 top-4">
@@ -103,16 +103,16 @@ const SignIn: React.FC = () => {
                   <input
                     type="submit"
                     value="Sign In"
-                    className="w-full cursor-pointer rounded-lg border border-graydark bg-graydark p-4 text-white transition hover:bg-opacity-90"
+                    className="w-full cursor-pointer rounded-lg border border-lightblue bg-lightblue p-4 text-white transition hover:bg-opacity-90"
                   />
                 </div>
 
             
 
                 <div className="mt-6 text-center">
-                  <p className='text-graydark'>
+                  <p className='text-lightblue'>
                     Don’t have any account?{' '}
-                    <Link to="/auth/signup" className="text-graydark">
+                    <Link to="/auth/signup" className="text-lightblue">
                       Sign Up
                     </Link>
                   </p>

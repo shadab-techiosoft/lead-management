@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import CreateLeadModal, { Lead } from '../modals/CreateLeadModal';
@@ -147,17 +147,17 @@ const TableComponent = () => {
 
   return (
     <div className=" border rounded-lg shadow-md border-stroke bg-whiter px-5 pt-6 pb-2.5  sm:px-7.5 xl:pb-1">
-      <h4 className="mb-6 text-xl font-semibold text-graydark">Leads Table</h4>
+      <h4 className="mb-6 text-xl font-semibold text-lightblue">Leads Table</h4>
       <div className="flex justify-between">
         <input
           type="text"
           placeholder="Search..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="mb-4 rounded-md border max-w-md text-graydark bg-whiter w-full placeholder:text-gray-600 border-graydark p-2"
+          className="mb-4 rounded-md border max-w-md text-lightblue bg-whiter w-full placeholder:text-gray-600 border-lightblue p-2"
         />
         <button
-          className="mb-4 ml-4 rounded-md bg-graydark text-white px-5 py-1"
+          className="mb-4 ml-4 rounded-md bg-lightblue text-white px-5 py-1"
           onClick={handleCreate}
         >
           Create Lead
@@ -165,46 +165,46 @@ const TableComponent = () => {
       </div>
 
       <div className="overflow-x-auto">
-        <table className="w-full table-auto border-collapse border border-graydark">
+        <table className="w-full table-auto border-collapse border border-lightblue">
           <thead className=''>
             <tr className="bg-body ">
-              <th className="border border-graydark p-4 text-left text-graydark">
+              <th className="border border-lightblue p-4 text-left text-lightblue">
                 <input type="checkbox" />
               </th>
-              <th className="border border-graydark p-3 text-left text-graydark">Lead Name</th>
-              <th className="border border-graydark p-3 text-left text-graydark">Company Name</th>
-              <th className="border border-graydark p-3 text-left text-graydark">Phone</th>
-              <th className="border border-graydark p-3 text-left text-graydark">Email</th>
-              <th className="border border-graydark p-3 text-left text-graydark">Lead Status</th>
-              <th className="border border-graydark p-3 text-left text-graydark">Created Date</th>
-              <th className="border border-graydark p-3 text-left text-graydark">Lead Owner</th>
-              <th className="border border-graydark p-3 text-left text-graydark">Action</th>
+              <th className="border border-lightblue p-3 text-left text-lightblue">Lead Name</th>
+              <th className="border border-lightblue p-3 text-left text-lightblue">Company Name</th>
+              <th className="border border-lightblue p-3 text-left text-lightblue">Phone</th>
+              <th className="border border-lightblue p-3 text-left text-lightblue">Email</th>
+              <th className="border border-lightblue p-3 text-left text-lightblue">Lead Status</th>
+              <th className="border border-lightblue p-3 text-left text-lightblue">Created Date</th>
+              <th className="border border-lightblue p-3 text-left text-lightblue">Lead Owner</th>
+              <th className="border border-lightblue p-3 text-left text-lightblue">Action</th>
             </tr>
           </thead>
           <tbody>
             {currentPageData.map((lead, index) => (
               <tr key={index}>
-                <td className="border border-graydark p-4">
+                <td className="border border-lightblue p-4">
                   <input type="checkbox" />
                 </td>
-                <td className="border border-graydark p-4 text-graydark">{lead.leadName}</td>
-                <td className="border border-graydark p-4 text-graydark">{lead.companyName}</td>
-                <td className="border border-graydark p-4 text-graydark">{lead.phone}</td>
-                <td className="border border-graydark p-4 text-graydark">{lead.email}</td>
-                <td className="border border-graydark p-4 text-center">
+                <td className="border border-lightblue p-4 text-lightblue">{lead.leadName}</td>
+                <td className="border border-lightblue p-4 text-lightblue">{lead.companyName}</td>
+                <td className="border border-lightblue p-4 text-lightblue">{lead.phone}</td>
+                <td className="border border-lightblue p-4 text-lightblue">{lead.email}</td>
+                <td className="border border-lightblue p-4 text-center">
                   <span
                     className={`rounded-full px-3 py-1 text-sm font-medium ${statusColors[lead.leadStatus as keyof typeof statusColors]}`}
                   >
                     {lead.leadStatus}
                   </span>
                 </td>
-                <td className="border border-graydark p-2 text-center text-graydark">
+                <td className="border border-lightblue p-2 text-center text-lightblue">
                   {lead.createdDate}
                 </td>
-                <td className="border border-graydark p-2 text-center text-graydark">
+                <td className="border border-lightblue p-2 text-center text-lightblue">
                   {lead.leadOwner}
                 </td>
-                <td className="border border-graydark p-2 text-center text-graydark">
+                <td className="border border-lightblue p-2 text-center text-lightblue">
                   <div className="flex justify-center gap-2">
                     <FaEdit
                       className="cursor-pointer text-black"
@@ -223,13 +223,13 @@ const TableComponent = () => {
   nextLabel={'Next'}
   pageCount={pageCount}
   onPageChange={handlePageClick}
-  containerClassName={'my-4 flex justify-end items-center gap-3 text-graydark'}
-  previousClassName={'text-graydark cursor-pointer'}
-  nextClassName={'text-graydark cursor-pointer'}
+  containerClassName={'my-4 flex justify-end items-center gap-3 text-lightblue'}
+  previousClassName={'text-lightblue cursor-pointer'}
+  nextClassName={'text-lightblue cursor-pointer'}
   disabledClassName={'opacity-50 cursor-not-allowed'}
   pageClassName={'cursor-pointer'}
-  pageLinkClassName={'px-3 py-1 rounded-full text-graydark'} // Default text-graydark
-  activeClassName={'font-bold bg-graydark text-whiter rounded-full px-3 py-1'} // Active styling
+  pageLinkClassName={'px-3 py-1 rounded-full text-lightblue'} 
+  activeClassName={'font-bold bg-lightblue text-whiter rounded-full px-3 py-1'} 
   breakLabel={'...'}
   breakClassName={'cursor-default'}
   renderOnZeroPageCount={null}
