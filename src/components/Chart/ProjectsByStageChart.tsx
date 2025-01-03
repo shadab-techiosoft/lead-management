@@ -1,4 +1,3 @@
-
 import React from "react";
 import Chart from "react-apexcharts";
 
@@ -122,7 +121,6 @@ const ProjectsByStageChart: React.FC = () => {
                     label: {
                         borderColor: "#0479D0",
                         style: {
-
                             background: "#0479D0",
                         },
                         text: "Mid-Year",
@@ -130,6 +128,74 @@ const ProjectsByStageChart: React.FC = () => {
                 },
             ],
         },
+        responsive: [
+            {
+                breakpoint: 1024,
+                options: {
+                    chart: {
+                        height: 300,
+                    },
+                    xaxis: {
+                        labels: {
+                            style: {
+                                fontSize: "12px",
+                            },
+                        },
+                    },
+                    yaxis: {
+                        labels: {
+                            style: {
+                                fontSize: "12px",
+                            },
+                        },
+                    },
+                },
+            },
+            {
+                breakpoint: 768,
+                options: {
+                    chart: {
+                        height: 250,
+                    },
+                    xaxis: {
+                        labels: {
+                            style: {
+                                fontSize: "10px",
+                            },
+                        },
+                    },
+                    yaxis: {
+                        labels: {
+                            style: {
+                                fontSize: "10px",
+                            },
+                        },
+                    },
+                },
+            },
+            {
+                breakpoint: 480,
+                options: {
+                    chart: {
+                        height: 200,
+                    },
+                    xaxis: {
+                        labels: {
+                            style: {
+                                fontSize: "8px",
+                            },
+                        },
+                    },
+                    yaxis: {
+                        labels: {
+                            style: {
+                                fontSize: "8px",
+                            },
+                        },
+                    },
+                },
+            },
+        ],
     };
 
     const chartSeries = [
@@ -143,9 +209,9 @@ const ProjectsByStageChart: React.FC = () => {
 
     return (
         <div className="p-4 mt-10 bg-white rounded-lg shadow-md">
-            <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-medium text-gray-800">Leads by date </h3>
-                <div className="flex items-center space-x-2">
+            <div className="flex flex-col md:flex-row items-center justify-between mb-4 space-y-4 md:space-y-0">
+                <h3 className="text-lg font-medium text-lightblue">Leads by date</h3>
+                <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-2">
                     <select
                         className="border border-gray-300 rounded px-2 py-1 text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-300"
                         defaultValue="Sales Pipeline"

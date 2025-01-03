@@ -3,7 +3,8 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SidebarLinkGroup from './SidebarLinkGroup';
 import Logo from '/logo.png';
-import { FaTachometerAlt, FaUser, FaTable, FaCog, FaChevronDown, FaChevronUp, FaSignOutAlt, FaCalendarAlt } from 'react-icons/fa';
+import { FaChevronDown, FaPlus, FaChevronUp, FaSignOutAlt, FaEye, FaPencilAlt } from 'react-icons/fa';
+import { TbPresentationAnalytics } from "react-icons/tb";
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -16,16 +17,15 @@ const navItems = [
     items: [
       {
         label: 'Dashboard',
-        icon: FaTachometerAlt,
+        icon: TbPresentationAnalytics,
         path: '/',
         subItems: [
-          { label: 'Analyst', path: '/' },
+          { label: 'Analyst', icon: TbPresentationAnalytics, path: '/' },
         ],
       },
-      { label: 'Calendar', icon: FaCalendarAlt, path: '/calendar' },
-      { label: 'Profile', icon: FaUser, path: '/profile' },
-      { label: 'Tables', icon: FaTable, path: '/tables' },
-      { label: 'Settings', icon: FaCog, path: '/settings' },
+      { label: 'Create Leads', icon: FaPlus, path: '/create-leads' },
+      { label: 'View Leads', icon: FaEye, path: '/view-leads' },
+      { label: 'Edit Leads', icon: FaPencilAlt, path: '/edit-leads' },
       { label: 'Sign In', icon: FaSignOutAlt, path: '/auth/signin' },
       { label: 'Sign Up', icon: FaSignOutAlt, path: '/auth/signup' },
     ],
@@ -80,7 +80,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   return (
     <aside
       ref={sidebar}
-      className={`absolute  left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-[#fff] duration-300 ease-linear lg:static lg:translate-x-0 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
+      className={`absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-[#fff] duration-300 ease-linear lg:static lg:translate-x-0 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
     >
       <div className="flex items-center justify-between gap-2 px-6 pt-5.5 lg:pt-6.5">
         <NavLink to="/">
@@ -91,7 +91,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
           onClick={() => setSidebarOpen(!sidebarOpen)}
           aria-controls="sidebar"
           aria-expanded={sidebarOpen}
-          className="block lg:hidden"
+          className="block lg:hidden text-lightblue"
         >
           <svg
             className="fill-current"
@@ -108,7 +108,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
           </svg>
         </button>
       </div>
-      <div className="no-scrollbar  flex flex-col overflow-y-auto duration-300 ease-linear">
+      <div className="no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear">
         <nav className="mt-3 py-4 lg:mt-2 border-t-2 border-lightblue">
           {navItems.map((section, index) => (
             <div key={index}>
@@ -127,15 +127,15 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           >
                             <NavLink
                               to="#"
-                              className={`group relative flex items-center gap-2.5 text-xl px-4 py-2 font-medium bg-lightblue text-whiter duration-300 ease-in-out hover:bg-lightblue hover:text-whiter ${(pathname === item.path || pathname.includes(item.path)) && 'bg-lightblue text-whiter'}`}
+                              className={`group relative flex items-center gap-2.5 lg:text-xl sm:text-xs sm:px-3 sm:py-1.5 px-4 py-2 font-medium bg-lightblue text-whiter duration-300 ease-in-out hover:bg-lightblue hover:text-whiter ${(pathname === item.path || pathname.includes(item.path)) && 'bg-lightblue text-whiter'}`}
                               onClick={(e) => {
                                 e.preventDefault();
                                 sidebarExpanded ? handleClick() : setSidebarExpanded(true);
                               }}
                             >
-                              <item.icon className="text-xl" />
+                              <item.icon className="lg:text-xl sm:text-xs" />
                               {item.label}
-                              {open ? <FaChevronUp className="text-xl absolute right-4 top-1/2 -translate-y-1/2" /> : <FaChevronDown className="text-xl absolute right-4 top-1/2 -translate-y-1/2" />}
+                              {open ? <FaChevronUp className="lg:text-xl sm:text-xs absolute right-4 top-1/2 -translate-y-1/2" /> : <FaChevronDown className="lg:text-xl sm:text-xs absolute right-4 top-1/2 -translate-y-1/2" />}
                             </NavLink>
                           </motion.div>
                           <div className={`translate transform overflow-hidden ${!open && 'hidden'}`}>
@@ -145,10 +145,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                                   <NavLink
                                     to={subItem.path}
                                     className={({ isActive }) =>
-                                      'group relative flex items-center text-xl gap-2.5 py-2 px-4 font-medium text-lightblue duration-300 ease-in-out hover:text-whiter hover:bg-lightblue ' +
+                                      'group relative flex items-center lg:text-xl sm:text-xs gap-2.5 py-2 sm:py-1.5 px-4 sm:px-3 font-medium text-lightblue duration-300 ease-in-out hover:text-whiter hover:bg-lightblue ' +
                                       (isActive && '!bg-lightblue text-whiter')
                                     }
                                   >
+                                    <item.icon className="lg:text-xl sm:text-xs" />
                                     {subItem.label}
                                   </NavLink>
                                 </li>
@@ -166,9 +167,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     >
                       <NavLink
                         to={item.path}
-                        className={`group relative flex text-xl my-3 items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-lightblue duration-300 ease-in-out hover:bg-lightblue hover:text-whiter ${pathname.includes(item.path) && 'text-whiter bg-lightblue'}`}
+                        className={`group relative flex lg:text-xl sm:text-xs my-2 items-center gap-2.5 rounded-sm lg:py-2 sm:py-1.5 px-4 sm:px-3 font-medium text-lightblue duration-300 ease-in-out hover:bg-lightblue hover:text-whiter ${pathname.includes(item.path) && 'text-whiter bg-lightblue'}`}
                       >
-                        <item.icon className="text-xl" />
+                        <item.icon className="lg:text-xl sm:text-xs" />
                         {item.label}
                       </NavLink>
                     </motion.li>

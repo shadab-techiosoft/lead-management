@@ -11,12 +11,12 @@ export const Table = ({ rows, deleteRow, editRow }) => {
       <table className="table">
         <thead>
           <tr className="bg-gray-2 text-left    ">
-            <th className="min-w-[220px] py-4 px-4 font-medium text-black dark:text-white xl:pl-11">Bond</th>
-            <th className="min-w-[150px] py-4 px-4 font-medium text-black dark:text-white">Paramter</th>
-            <th className="py-4 px-4 font-medium text-black dark:text-white">Criterion</th>
-            <th className="py-4 px-4 font-medium text-black dark:text-white">Value to give alert</th>
-            <th className="py-4 px-4 font-medium text-black dark:text-white">Alert type</th>
-            <th className="py-4 px-4 font-medium text-black dark:text-white">Actions</th>
+            <th className="min-w-[220px] py-4 px-4 font-medium text-black   xl:pl-11">Bond</th>
+            <th className="min-w-[150px] py-4 px-4 font-medium text-black  ">Paramter</th>
+            <th className="py-4 px-4 font-medium text-black  ">Criterion</th>
+            <th className="py-4 px-4 font-medium text-black  ">Value to give alert</th>
+            <th className="py-4 px-4 font-medium text-black  ">Alert type</th>
+            <th className="py-4 px-4 font-medium text-black  ">Actions</th>
           </tr>
         </thead>
         <tbody>
